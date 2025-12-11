@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abstract Help Center</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: #efefef;
+    }
+
+    /* TOP BAR */
+    header {
+      background: #111;
+      color: #fff;
+      padding: 16px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    logo title {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .logo-img {
+        width:35px;
+        height: 35px;
+    }
+
+    .top-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .menu-btn {
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border: 1px solid #444;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      background: #d5d2dd;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 44px;
+      font-weight: 700;
+    }
+
+    .search-box {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .search-box input {
+      width: 350px;
+      padding: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .search-btn {
+      width: 50px;
+      border-radius: 6px;
+      background: #fff;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    /* SECTION LABELS */
+    .labels {
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 40px;
+      font-weight: 600;
+    }
+
+    .help-btn {
+      background: #4060ff;
+      padding: 8px 16px;
+      color: #fff;
+      border-radius: 18px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* CARDS */
+    .card-section {
+      padding: 40px 40px;
+    }
+
+    .card {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      margin-bottom: 20px;
+       }
+
+    .card h3 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .icon {
+      width: 50px;
+      height: 50px;
+    }
+
+    .learn {
+      margin-top: 8px;
+      color: #5b49d0;
+      font-weight: 600;
+      font-size: 14px;
+      display: inline-block;
+    }
+
+    /* TWO COLUMN GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      color: #fff;
+      padding: 40px;
+      margin-top: 40px;
+    }
+
+    footer h4 {
+      margin-top: 0;
+      font-weight: 700;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+    }
+
+    footer a {
+      display: block;
+      margin: 5px 0;
+      text-decoration: none;
+      color: #ccc;
+      font-size: 14px;
+    }
+
+    .copy {
+      margin-top: 30px;
+      font-size: 13px;
+      opacity: 0.7;
+    }
+  </style>
+
+</head>
+<body>
+
+<header>
+  <div class="logo-title">
+    <img src="logo2.jpg" class="logo-img" alt="logo">Abstract | Help Center</div>
+    <div class="icons">🔍 ☰</div> 
+</header>
+
+<section class="hero">
+  <h1>How can we help?</h1>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search..." />
+    <button class="search-btn" onclick="runSearch()">➜</button>
+  </div>
+</section>
+
+<div class="labels">
+  <div>Using Abstract</div>
+  <div style="display:flex; gap:20px; align-items:center;">
+    <div>Manage your account</div>
+    <div class="help-btn">Help</div>
+  </div>
+</div>
+
+<!-- CARD SECTION -->
+<div class="card-section">
+
+  <div class="grid">
+    <div class="card">
+      <img src="first.jpg.jpeg" class="icon" />
+      <div>
+        <h3>Abstract lets you manage, version, and document your designs</h3>
+        <p>Everything in one place with collaboration tools.</p>
+        <a class="learn">Learn More →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="secnd.jpg.jpeg" class="icon" />
+      <div>
+        <h3>Configure your account settings</h3>
+        <p>Change email, password, and profile details.</p>
+        <a class="learn">Learn More →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="third.jpg.jpeg" class="icon" />
+      <div>
+        <h3>Manage organizations, teams & projects</h3>
+        <p>Organize your designers and workflows.</p>
+        <a class="learn">Learn More →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="four.jpg.jpeg" class="icon" />
+      <div>
+        <h3>Manage billing</h3>
+        <p>Update billing, change plans, and view invoices.</p>
+        <a class="learn">Learn More →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="fivth.jpg.jpeg" class="icon" />
+      <div>
+        <h3>Authenticate to Abstract</h3>
+        <p>Configure SSO, SCIM, and provisioning.</p>
+        <a class="learn">Learn More →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="sixth.jpg.jpeg" class="icon" />
+      <div>
+        <h3>Get in touch with a human</h3>
+        <p>Contact support for real-time help.</p>
+        <a class="learn">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Abstract</h4>
+      <a>Start Trial</a>
+      <a>Pricing</a>
+      <a>Download</a>
+    </div>
+
+    <div>
+      <h4>Resources</h4>
+      <a>Blog</a>
+      <a>Help Center</a>
+      <a>Release Notes</a>
+      <a>Status</a>
+    </div>
+
+    <div>
+      <h4>Community</h4>
+      <a>Twitter</a>
+      <a>LinkedIn</a>
+      <a>Facebook</a>
+      <a>Dribbble</a>
+      <a>Podcast</a>
+    </div>
+
+    <div>
+      <h4>Company</h4>
+      <a>About Us</a>
+      <a>Careers</a>
+      <a>Legal</a>
+      <br>
+      <strong>Contact Us</strong><br>
+      <a>info@abstract.com</a>
+    </div>
+  </div>
+
+  <div class="copy">
+    © Copyright 2025 Abstract Studio Design, Inc. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  // Run search and update URL
+  function runSearch() {
+    const q = document.getElementById("searchInput").value.trim();
+    if (q.length > 0) {
+      window.location.href = ?q=${encodeURIComponent(q)};
+    }
+  }
+
+  // Auto-fill input if query parameter exists
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has("q")) {
+    document.getElementById("searchInput").value = urlParams.get("q");
+  }
+</script>
+
+</body>
+</html>

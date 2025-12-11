@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Abstract — Help Center (Mock)</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #f5f5f7;
+      --hero-bg: #dcd7e6; /* soft lavender */
+      --accent: #6b4bd6;   /* purple accent */
+      --muted: #6b6b75;
+      --card-bg: #ffffff;
+      --shadow: 0 6px 18px rgba(14,14,20,0.08);
+      --radius: 10px;
+      --max-width: 1100px;
+      --gap: 28px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:#191919;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    /* Top bar */
+    .topbar{
+      background:#0d0d0d;
+      color:#fff;
+      padding:14px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .brand .logo{
+      width:44px;height:28px;
+      background:linear-gradient(135deg,#ffffff 0%, #e6e6e9 100%);
+      border-radius:6px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#111;
+      font-weight:700;
+      font-size:14px;
+    }
+    .brand .title{
+      font-weight:600;
+      letter-spacing:0.2px;
+    }
+    .top-actions{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .hamburger{
+      width:44px;height:44px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.08);
+      display:grid;place-items:center;cursor:pointer;
+    }
+    .hamburger:before{
+      content:"≡";
+      color:#fff;font-size:20px;line-height:1;
+    }
+
+    /* Center container */
+    .container{
+      max-width:var(--max-width);
+      margin:26px auto;
+      padding:0 20px;
+    }
+
+    /* Hero */
+    .hero{
+      background:var(--hero-bg);
+      border-radius:12px;
+      padding:48px 36px;
+      box-shadow: var(--shadow);
+      display:flex;
+      flex-direction:column;
+      gap:22px;
+      align-items:center;
+      text-align:center;
+    }
+    .hero h1{
+      margin:0;
+      font-size:48px;
+      font-weight:700;
+      color:#0f1226;
+      letter-spacing:-0.6px;
+    }
+
+    .search-wrap{
+      width:100%;
+      max-width:760px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .search{
+      flex:1;
+      display:flex;
+      align-items:center;
+      background: #f2f2f4;
+      padding:14px 18px;
+      border-radius:8px;
+      border:1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.04) inset;
+    }
+    .search input{
+      border:0;background:transparent;outline:none;font-size:16px;color:#333;flex:1;
+      font-weight:400;
+    }
+    .search button{
+      margin-left:8px;
+      background:transparent;border:0;outline:none;cursor:pointer;font-size:18px;padding:6px;
+    }
+    .search .go{
+      width:46px;height:46px;border-radius:6px;background:#fff;border:1px solid rgba(0,0,0,0.06);
+      display:grid;place-items:center;box-shadow:0 6px 12px rgba(0,0,0,0.06);
+      cursor:pointer;
+    }
+
+    /* Section navigation (below hero) */
+    .section-nav{
+      margin-top:24px;
+      display:flex;
+      justify-content:space-between;
+      width:100%;
+      gap:10px;
+    }
+    .section-nav .left, .section-nav .right{
+      font-weight:600;color:#111;font-size:16px;
+    }
+    .help-pill{
+      background:#2f56ff;color:#fff;padding:10px 14px;border-radius:20px;font-weight:600;
+      box-shadow: 0 6px 18px rgba(47,86,255,0.12);
+    }
+
+    /* Cards grid */
+    .grid{
+      margin-top:26px;
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:var(--gap);
+      align-items:start;
+    }
+
+    .card{
+      background:var(--card-bg);
+      border-radius:12px;
+      padding:22px;
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+      border:1px solid rgba(20,20,20,0.02);
+      box-shadow: 0 8px 20px rgba(15,15,20,0.03);
+    }
+    .icon{
+      width:56px;height:56px;border-radius:10px;display:grid;place-items:center;
+      font-size:20px;
+      flex-shrink:0;
+      background:linear-gradient(135deg,#f6f6ff,#eef5ff);
+      border:1px solid rgba(0,0,0,0.03);
+    }
+    .card h3{
+      margin:0 0 6px 0;font-size:18px;font-weight:700;
+    }
+    .card p{
+      margin:0;color:var(--muted);font-size:14px;
+    }
+    .learn{
+      margin-top:10px;display:inline-block;font-size:14px;color:var(--accent);font-weight:600;text-decoration:none;
+    }
+
+    /* Lower section - more items in two columns like screenshot */
+    .grid-2{
+      margin-top:26px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:var(--gap);
+    }
+
+    /* Footer spacing */
+    .footer-space{height:36px}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero h1{font-size:40px}
+      .grid, .grid-2{grid-template-columns:1fr;}
+      .section-nav{flex-direction:column;align-items:center;gap:12px}
+    }
+    @media (max-width:420px){
+      .hero h1{font-size:32px}
+      .search-wrap{padding:0}
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo">A</div>
+      <div class="title">Abstract | Help Center</div>
+    </div>
+    <div class="top-actions">
+      <!-- Right-side hamburger/menu -->
+      <button class="hamburger" aria-label="menu"></button>
+    </div>
+  </div>
+
+  <main class="container" role="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">How can we help?</h1>
+
+      <form class="search-wrap" onsubmit="event.preventDefault(); doSearch();">
+        <div class="search" role="search" aria-label="Search help">
+          <input id="q" type="search" placeholder="Search" aria-label="Search the help center" />
+          <button type="submit" class="go" title="Search" aria-label="Search">
+            <!-- Arrow icon (SVG) -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M13 5l6 7-6 7" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </form>
+
+      <!-- small section nav (Using Abstract / Manage your account / Help button) -->
+      <div class="section-nav" role="navigation" aria-label="Quick links">
+        <div class="left">Using Abstract</div>
+        <div class="right" style="display:flex;align-items:center;gap:14px;">
+          <div>Manage your account</div>
+          <div class="help-pill" role="button" tabindex="0">Help</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature cards grid (top) -->
+    <section class="grid" aria-label="Highlights">
+      <article class="card">
+        <div class="icon" aria-hidden="true">
+          <!-- small stack icon -->
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="4" width="18" height="3" rx="1" fill="#f6f6ff"/>
+            <rect x="6" y="10" width="12" height="3" rx="1" fill="#eef5ff"/>
+            <rect x="8" y="16" width="8" height="3" rx="1" fill="#e8eefc"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Abstract lets you manage, version, and document your designs in one place.</h3>
+          <p>Keep design history, review changes, and collaborate with your team — all from a single workspace.</p>
+          <a class="learn" href="#" onclick="return false">Learn More →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icon" aria-hidden="true">
+          <!-- user icon -->
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="8" r="3.2" fill="#f6f6ff"/>
+            <path d="M5 20c1.8-4 5.2-6 7-6s5.2 2 7 6" fill="#eef5ff"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Configure your account</h3>
+          <p>Update your email, profile details, and password — and manage notifications and preferences.</p>
+          <a class="learn" href="#" onclick="return false">Learn More →</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- second grid of items like Manage organizations, Manage billing -->
+    <section class="grid-2" aria-label="More topics">
+      <article class="card">
+        <div class="icon" aria-hidden="true">
+          <!-- puzzle piece -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 13v5h5v-1.5a1.5 1.5 0 0 1 1.5-1.5h1.5v-5H6z" fill="#f6f6ff"/>
+            <path d="M17 6v5h-5V9.5A1.5 1.5 0 0 1 13.5 8H15V6h2z" fill="#eef5ff"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Manage organizations, teams, and projects</h3>
+          <p>Use Abstract organizations, teams, and projects to organize your people and your work.</p>
+          <a class="learn" href="#" onclick="return false">Learn More →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icon" aria-hidden="true">
+          <!-- dollar icon -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 6v12" stroke="#f0d36a" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M9 8h6a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2H9" stroke="#f0d36a" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+        </div>
+        <div>
+          <h3>Manage billing</h3>
+          <p>Change subscriptions and payment details, view invoices, and update billing contacts.</p>
+          <a class="learn" href="#" onclick="return false">Learn More →</a>
+        </div>
+      </article>
+    </section>
+
+    <div class="footer-space" aria-hidden="true"></div>
+  </main>
+
+  <script>
+    function doSearch(){
+      const q = document.getElementById('q').value.trim();
+      if(!q){
+        // small shake animation for empty search (visual affordance)
+        const input = document.getElementById('q');
+        input.style.transition = 'transform 0.15s';
+        input.style.transform = 'translateX(-6px)';
+        setTimeout(()=> input.style.transform = 'translateX(6px)',150);
+        setTimeout(()=> input.style.transform = '',300);
+        return;
+      }
+      // Show basic result behaviour (this file is static). Replace with real search route.
+      alert('Search for: ' + q + '\n(This is a static demo — wire this to your search backend.)');
+    }
+  </script>
+
+</body>
+</html>
